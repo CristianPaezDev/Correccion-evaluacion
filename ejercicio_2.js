@@ -8,57 +8,61 @@
 // e.Calcular el promedio de números pares
 // Para este ejercicio se solicita trabajar con módulos
 
-import * as programa from './programa.js';
-
-function main() {
-    const numeros = [1, 2, 3, 4, 5]; // Aquí puedes ingresar los números
-    console.log('Suma de los números:', programa.sumarNumeros(numeros));
-    console.log('Cantidad de números primos:', programa.primos(numeros));
-    console.log('Cantidad de números pares:', programa.pares(numeros));
-    console.log('Promedio de los números primos:', programa.promedio_primos(numeros));
-    console.log('Promedio de los números pares:', programa.promedio_pares(numeros));
+function sumar(a) {
+    
 }
 
-main();
+// import * as programa from './programa.js';
 
-export function sumarNumeros(numeros) {
-    let suma = 0;
-    for (const num of numeros) {
-        suma += num;
-    }
-    return suma;
-}
+// function main() {
+//     const numeros = [1, 2, 3, 4, 5]; // Aquí puedes ingresar los números
+//     console.log('Suma de los números:', programa.sumarNumeros(numeros));
+//     console.log('Cantidad de números primos:', programa.primos(numeros));
+//     console.log('Cantidad de números pares:', programa.pares(numeros));
+//     console.log('Promedio de los números primos:', programa.promedio_primos(numeros));
+//     console.log('Promedio de los números pares:', programa.promedio_pares(numeros));
+// }
 
-export function primos(numeros) {
-    let contadorPrimos = 0;
-    for (const num of numeros) {
-        if (esPrimo(num)) {
-            contadorPrimos++;
-        }
-    }
-    return contadorPrimos;
-}
+// main();
 
-export function pares(numeros) {
-    let contadorPares = 0;
-    for (const num of numeros) {
-        if (num % 2 === 0) {
-            contadorPares++;
-        }
-    }
-    return contadorPares;
-}
+// export function sumarNumeros(numeros) {
+//     let suma = 0;
+//     for (const num of numeros) {
+//         suma += num;
+//     }
+//     return suma;
+// }
 
-export function promedio_primos(numeros) {
-    const primos = numeros.filter(num => esPrimo(num));
-    if (primos.length === 0) return 0;
-    const suma = primos.reduce((total, num) => total + num, 0);
-    return suma / primos.length;
-}
+// export function primos(numeros) {
+//     let contadorPrimos = 0;
+//     for (const num of numeros) {
+//         if (esPrimo(num)) {
+//             contadorPrimos++;
+//         }
+//     }
+//     return contadorPrimos;
+// }
 
-export function promedio_pares(numeros) {
-    const pares = numeros.filter(num => num % 2 === 0);
-    if (pares.length === 0) return 0;
-    const suma = pares.reduce((total, num) => total + num, 0);
-    return suma / pares.length;
-}
+// export function pares(numeros) {
+//     let contadorPares = 0;
+//     for (const num of numeros) {
+//         if (num % 2 === 0) {
+//             contadorPares++;
+//         }
+//     }
+//     return contadorPares;
+// }
+
+// export function promedio_primos(numeros) {
+//     const primos = numeros.filter(num => esPrimo(num));
+//     if (primos.length === 0) return 0;
+//     const suma = primos.reduce((total, num) => total + num, 0);
+//     return suma / primos.length;
+// }
+
+// export function promedio_pares(numeros) {
+//     const pares = numeros.filter(num => num % 2 === 0);
+//     if (pares.length === 0) return 0;
+//     const suma = pares.reduce((total, num) => total + num, 0);
+//     return suma / pares.length;
+// }
