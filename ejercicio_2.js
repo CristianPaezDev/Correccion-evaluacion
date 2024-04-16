@@ -8,9 +8,7 @@
 // e.Calcular el promedio de números pares
 // Para este ejercicio se solicita trabajar con módulos
 
-function sumar(a) {
-    
-}
+let selecciona = parseFloat(prompt("Ingresa una opcion (a. Sumar \nb. Contar los numeros primos \n c. Contar los numeros pares \nd. Calcular el promedio de los numeros primos)"))
 
 // import * as programa from './programa.js';
 
