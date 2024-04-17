@@ -3,7 +3,7 @@
 // como único parámetro rest donde nos responderá cual de las palabras
 // ingresadas es mayor a todas las anteriores.
 
-function palabralarga(...palabras) {
+let palabralarga = function (...palabras) {
     let palabraMasLarga = "";
     for (let palabra of palabras) {
         if (palabra.length > palabraMasLarga.length) {
