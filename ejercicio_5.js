@@ -1,9 +1,16 @@
-import { matematica } from "./modulo.js";
-let a = parseInt(prompt("Ingresa un numero"));
-let b = parseInt(prompt("Ingresa otro numero"));
+import Calculadora from "./ejercicio_5_modulo.js";
 
-let suma = matematica.suma(a, b);
-let resta = matematica.resta(a, b);
-let multiplicacion = matematica.multiplicacion(a, b);
-let division = matematica.division(a, b);
-console.log(suma, resta, division, multiplicacion);
+const calculadora = new Calculadora();
+
+let a = parseFloat(prompt("Ingresa un número"));
+let b = parseFloat(prompt("Ingresa otro número"));
+
+try {
+  let suma = calculadora.suma(a, b);
+  let resta = calculadora.resta(a, b);
+  let multiplicacion = calculadora.multiplicacion(a, b);
+  let division = calculadora.division(a, b);
+  console.log(`La suma: ${suma}, \nLa resta: ${resta}, \nLa división: ${division}, \nLa multiplicación: ${multiplicacion}`);
+} catch (error) {
+  console.error(error.message);
+}

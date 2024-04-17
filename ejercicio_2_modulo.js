@@ -35,94 +35,94 @@ function solicitarNumeros() {
 
 
 function sumarNumeros(numeros) {
-    let suma = 0;
-    for (let numero of numeros) {
-        suma += numero;
-    }
-    return suma;
+  let suma = 0;
+  for (let i = 0; i < numeros.length; i++) {
+    suma += numeros[i];
+  }
+  return suma;
 }
 
 function contarNumerosPrimos(numeros) {
-    let contadorPrimos = 0;
-    for (let numero of numeros) {
-        if (esPrimo(numero)) {
-            contadorPrimos++;
-        }
+  let contadorPrimos = 0;
+  let primosEncontrados = [];
+
+  for (let i = 0; i < numeros.length; i++) {
+    if (esPrimo(numeros[i])) {
+      contadorPrimos++;
+      primosEncontrados.push(numeros[i]);
     }
-    return contadorPrimos;
+  }
+
+  return { contador: contadorPrimos, primos: primosEncontrados };
 }
 
 function contarNumerosPares(numeros) {
-    let contadorPares = 0;
-    for (let numero of numeros) {
-        if (numero % 2 === 0) {
-            contadorPares++;
-        }
+  let contadorPares = 0;
+  for (let i = 0; i < numeros.length; i++) {
+    if (numeros[i] % 2 === 0) {
+      contadorPares++;
     }
-    return contadorPares;
+  }
+  return contadorPares;
 }
 
 function calcularPromedio(numeros) {
-    let suma = sumarNumeros(numeros);
-    return suma / numeros.length;
+  let suma = sumarNumeros(numeros);
+  return suma / numeros.length;
 }
 
+
 function calcularPromedioPrimos(numeros) {
-    let primos = numeros.filter(numero => esPrimo(numero));
-    if (primos.length === 0) {
-        return 0;
-    }
-    return calcularPromedio(primos);
+  let primos = numeros.filter(numero => esPrimo(numero));
+  if (primos.length === 0) {
+    return 0;
+  }
+  return calcularPromedio(primos);
 }
 
 function calcularPromedioPares(numeros) {
-    let pares = numeros.filter(numero => numero % 2 === 0);
-    if (pares.length === 0) {
-        return 0;
-    }
-    return calcularPromedio(pares);
+  let pares = numeros.filter(numero => numero % 2 === 0);
+  if (pares.length === 0) {
+    return 0;
+  }
+  return calcularPromedio(pares);
 }
 
 function esPrimo(numero) {
-    if (numero <= 1) {
-        return false;
+  if (numero <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(numero); i++) {
+    if (numero % i === 0) {
+      return false;
     }
-    for (let i = 2; i <= Math.sqrt(numero); i++) {
-        if (numero % i === 0) {
-            return false;
-        }
-    }
-    return true;
+  }
+  return true;
 }
 
 export function main() {
-    let numeros = solicitarNumeros();
-    let opcion = prompt(`Seleccione la operación a realizar:
-a. Sumar los números
-b. Contar los números primos
-c. Contar los números pares
-d. Calcular el promedio de los números primos
-e. Calcular el promedio de los números pares`).toLowerCase();
+  let numeros = solicitarNumeros();
+  let opcion = prompt(`Seleccione la operación a realizar: \na. Sumar los números \nb. Contar los números primos \nc. Contar los números pares \nd. Calcular el promedio de los números primos \ne. Calcular el promedio de los números pares`).toLowerCase();
 
-    switch (opcion) {
-        case "a":
-            console.log("La suma de los números es:", sumarNumeros(numeros));
-            break;
-        case "b":
-            console.log("La cantidad de números primos es:", contarNumerosPrimos(numeros));
-            break;
-        case "c":
-            console.log("La cantidad de números pares es:", contarNumerosPares(numeros));
-            break;
-        case "d":
-            console.log("El promedio de los números primos es:", calcularPromedioPrimos(numeros));
-            break;
-        case "e":
-            console.log("El promedio de los números pares es:", calcularPromedioPares(numeros));
-            break;
-        default:
-            console.log("Opción no válida.");
-    }
+  switch (opcion) {
+    case "a":
+      console.log("La suma de los números es:", sumarNumeros(numeros));
+      break;
+    case "b":
+      let resultadoPrimos = contarNumerosPrimos(numeros);
+      console.log("La cantidad de números primos es:", resultadoPrimos.contador);
+      console.log("Números primos encontrados:", resultadoPrimos.primos.join(', '));
+      break;
+    case "c":
+      console.log("La cantidad de números pares es:", contarNumerosPares(numeros));
+      break;
+    case "d":
+      console.log("El promedio de los números primos es:", calcularPromedioPrimos(numeros));
+      break;
+    case "e":
+      console.log("El promedio de los números pares es:", calcularPromedioPares(numeros));
+      break;
+    default:
+      console.log("Opción no válida.");
+  }
 }
-
-// main();

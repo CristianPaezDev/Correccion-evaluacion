@@ -14,8 +14,8 @@ export function mayor() {
         let numero = parseFloat(prompt("Ingrese el número " + (i + 1) + ":"));
         numeros.push(numero);
     }
-    let numerosOrdenados = ordenarNumeros(...numeros);
+    let numerosorde = ordenarNumeros(...numeros);
     console.log("Números ordenados de mayor a menor:");
 
-    console.table(numerosOrdenados);
+    console.table(numerosorde);
 }
