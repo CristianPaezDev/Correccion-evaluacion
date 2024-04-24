@@ -3,8 +3,11 @@
 // una función expresada como único parámetro rest donde serán ordenados
 // de mayor a menor para luego mostrarlos en una tabla por consola.
 
-// ... este es el parametro rest. funciona llenando una array
-// let numerosorde = ordenarNumeros esta es la funcion expresada 
+// ... este es el parametro rest. funciona llenando una array.  permite que la función acepte cualquier número de argumentos numéricos
+
+// let numerosorde = ordenarNumeros. Esta es la funcion expresada  Esto significa que la función no tiene un nombre definido en su contexto, sino que se refiere al nombre de la variable a la que está asignada. 
+
+// numeros.sort((a, b) => a - b) ordena los elementos numéricos del array de menor a mayor.
 
 let ordenarNumeros = function  (...numeros) {
     return numeros.sort((a, b) => b - a);
